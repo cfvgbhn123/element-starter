@@ -33,11 +33,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass">
-
+@import  "../sass/common.scss";
     h1,
     h2{
         font-weight: normal;
-        //@include transform(translate(0,0))
+        @include transform(translate(0,0))
     };
     
     ul{
