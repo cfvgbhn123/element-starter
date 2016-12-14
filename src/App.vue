@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+
     
         <el-row>
             <el-col :span="24">
                
                 <div class="grid-content bg-purple-dark">
                     <kakaka></kakaka>
+
                     <hello></hello>
                 </div>
             </el-col>
@@ -25,10 +27,12 @@
     import stable from './components/superTable.vue'
     import kakaka from './components/menu.vue'
 
+
     export default {
         data() {
             return {
                 msg: 'VUE 2.0 测试项目'
+
             }
         },
 
@@ -51,6 +55,7 @@
             hello,
             stable,
             kakaka
+
         }
     }
 </script>
