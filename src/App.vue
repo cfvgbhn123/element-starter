@@ -1,19 +1,34 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
-    <el-button @click.native="startHacking">Let's do it</el-button>
-     <el-radio class="radio" v-model="radio" label="1">还好还好</el-radio>
-  <el-radio class="radio" v-model="radio" label="2">无可奉告</el-radio>
+    
+        <el-row>
+            <el-col :span="24">
+               
+                <div class="grid-content bg-purple-dark">
+                    <!--<menu></menu>-->
+                    <hello></hello>
+                </div>
+            </el-col>
+        </el-row>
+        <el-row>
+             <el-col :span="4">
+                        
+                </el-col>
+        </el-row>
     <hello></hello>
+    
   </div>
 </template>
 
 <script>
     import hello from './components/hello.vue'
+    import stable from './components/superTable.vue'
+    import menu from './components/menu.vue'
+
     export default {
         data() {
             return {
-                msg: 'VUE 2.0 好不好哇',
+                msg: 'VUE 2.0 测试项目',
                 radio: '2'
             }
         },
@@ -34,7 +49,9 @@
             }
         },
         components: {
-            hello
+            hello,
+            stable,
+            menu
         }
     }
 </script>
@@ -46,5 +63,30 @@
     
     body {
         font-family: Helvetica, sans-serif;
+        .el-row {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .el-col {
+            border-radius: 4px;
+        }
+        .bg-purple-dark {
+            background: #99a9bf;
+        }
+        .bg-purple {
+            background: #d3dce6;
+        }
+        .bg-purple-light {
+            background: #e5e9f2;
+        }
+        .grid-content {
+            border-radius: 4px;
+            min-height: 50px;
+        }
+        .row-bg {
+            padding: 10px 0;
+            background-color: #f9fafc;
+        }
     }
 </style>
