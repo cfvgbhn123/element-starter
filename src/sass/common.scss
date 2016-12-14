@@ -1,5 +1,23 @@
 /*common*/
-@mixin transform($bc){
-  transform: $bc;
-  -webkit-transform: $bc;
+
+@mixin transform($bc) {
+    transform: $bc;
+    -webkit-transform: $bc;
 }
+
+$bl:#58B7FF;
+$bd:#1D8CE0;
+$bb:#20A0FF;
+$gg:#13CE66;
+$yy:#F7BA2A;
+$rr:#FF4949;
+$bb:#1F2D3D;
+$ba:#324057;
+$bal:#475669;
+$ss:#8492A6;
+$sl:#99A9BF;
+$sal:#C0CCDA;
+$gray:#D3DCE6;
+$grayl:#E5E9F2;
+$grayal:#EFF2F7;
+$whitel:#F9FAFC;

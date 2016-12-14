@@ -25,6 +25,12 @@
                     message: 'We have laid the groundwork for you. Now it\'s your time to build something +1S!',
                     duration: 1000
                 })
+            },
+            houwa() {
+                this.$message({
+                    type: 'success',
+                    message: '-1S'
+                })
             }
         },
         components: {

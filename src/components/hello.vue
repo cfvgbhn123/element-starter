@@ -6,7 +6,7 @@
         <li>
             <el-button type="text">1111</el-button>
             <el-button>sousuo</el-button>
-            <el-button type="primary" icon="search">搜索</el-button>
+            <el-button type="primary" icon="search"  @click.native="houwa">搜索</el-button>
             <i class="el-icon-loading"></i>
           <i class="el-icon-share"></i>
           <i class="el-icon-edit"></i>
@@ -48,6 +48,21 @@
         data() {
             return {
                 msg: 'Welcome to Your Vue.js App'
+            }
+        },
+        methods: {
+            startHacking() {
+                this.$notify({
+                    title: '续一秒',
+                    message: 'We have laid the groundwork for you. Now it\'s your time to build something +1S!',
+                    duration: 1000
+                })
+            },
+            houwa() {
+                this.$message({
+                    type: 'success',
+                    message: '-1S'
+                })
             }
         }
     }
