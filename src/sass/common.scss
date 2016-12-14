@@ -1,0 +1,5 @@
+/*common*/
+@mixin transform($bc){
+  transform: $bc;
+  -webkit-transform: $bc;
+}
