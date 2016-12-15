@@ -5,13 +5,16 @@
         background-color: $whitel;
         @include _flex(row);
         .leftmenu {
-            @include _grow(4);
+            width: 200px;
             height: 100%;
             background-color: $bl;
+            .el-menu-vertical-demo .el-submenu {
+                transition: ease-in .5s height;
+            }
         }
         .rightcontent {
-            @include _grow(20);
+            @include _grow(21);
             height: 100%;
-            background-color: $bd;
+            background-color: $grayl;
         }
     }

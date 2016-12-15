@@ -2,7 +2,7 @@
   <div id="app">
 
             <router-view></router-view>
-             <router-view name='home'></router-view>
+             <router-view name='homedex'></router-view>
 </div>
 </template>
 
