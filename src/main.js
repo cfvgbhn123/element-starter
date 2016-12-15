@@ -16,8 +16,14 @@ Vue.use(VueResource)
 
 
 //路由
-const routes = [
-    { path: '/123', component: HEADER }
+const routes = [{
+        path: '/home',
+        component: {
+            default: HEADER,
+
+        }
+    },
+    { path: '/', component: HEADER }
 
 ]
 const router = new VueRouter({
