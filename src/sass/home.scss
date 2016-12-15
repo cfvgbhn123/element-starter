@@ -1,0 +1,17 @@
+    @import "./common.scss";
+    .contentMain {
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: $whitel;
+        @include _flex(row);
+        .leftmenu {
+            @include _grow(4);
+            height: 100%;
+            background-color: $bl;
+        }
+        .rightcontent {
+            @include _grow(20);
+            height: 100%;
+            background-color: $bd;
+        }
+    }
