@@ -8,7 +8,7 @@
                 <div class="grid-content bg-purple-dark">
                     <kakaka></kakaka>
 
-                    <hello></hello>
+                    
                 </div>
             </el-col>
         </el-row>
