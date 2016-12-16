@@ -14,10 +14,18 @@
 <el-submenu index="#" id="gameList">
 
     <template slot="title">游戏列表</template>
-    <el-menu-item :index=game v-for="game in gameList">{{game}}</el-menu-item>
+    <el-menu-item :index=game v-for="game in gameList" @click.native="chooseGame(game)">{{game}}</el-menu-item>
 </el-submenu>
-</el-menu>
+<!--<el-dropdown id="gameList">
+    <span class="el-dropdown-link">
+        选择游戏<i class="el-icon-caret-bottom el-icon--right"></i>
+      </span>
+    <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item v-for="game in gameList" @click.native="rush">{{game}}</el-dropdown-item>
 
+    </el-dropdown-menu>
+</el-dropdown>-->
+</el-menu>
 </div>
 </template>
 <script>
@@ -43,6 +51,10 @@
         },
 
         methods: {
+            chooseGame(game) {
+                this.$emit('chooseGame', game)
+                    // -> "hi"
+            },
             rush() {
                 this.$confirm("确定退出登录吗,并跳转到登录前页面?", "提示", {
                     confirmButtonText: '确定',

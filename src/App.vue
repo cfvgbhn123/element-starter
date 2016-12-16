@@ -29,6 +29,9 @@
             stable,
             kakaka
 
+        },
+        mounted() {
+
         }
     }
 </script>

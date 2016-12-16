@@ -1,7 +1,7 @@
     @import "./common.scss";
     .contentMain {
         width: 100%;
-        height: calc(100vh - 50px);
+        height: calc(100vh - 60px);
         background-color: $whitel;
         @include _flex(column);
         position: relative;
@@ -33,10 +33,16 @@
                 text-indent: 20px;
                 position: relative;
                 line-height: 50px;
-                span {
-                    line-height: 50px;
+                @include box_sizing();
+                border-bottom: 1px solid #999;
+                .el-breadcrumb {
+                    position: fixed;
+                    width: 50%;
                     span {
                         line-height: 50px;
+                        span {
+                            line-height: 50px;
+                        }
                     }
                 }
             }
@@ -49,14 +55,17 @@
             .leftmenu {
                 width: 200px;
                 height: 100%;
-                background-color: $bl;
+                background-color: #eff2f7;
+                .el-submenu {
+                    @include box_sizing();
+                    border-bottom: 1px solid #ddd;
+                }
                 .el-menu-vertical-demo .el-submenu {
                     transition: ease-in .5s height;
                 }
             }
             .rightcontent {
-                @include _grow(11);
-                height: 100%;
+                @include _grow(1);
                 background-color: $grayl;
             }
         }
