@@ -3,18 +3,61 @@
         width: 100%;
         height: calc(100vh - 50px);
         background-color: $whitel;
-        @include _flex(row);
-        .leftmenu {
-            width: 200px;
-            height: 100%;
-            background-color: $bl;
-            .el-menu-vertical-demo .el-submenu {
-                transition: ease-in .5s height;
+        @include _flex(column);
+        position: relative;
+        #dataAll {
+            width: 100%;
+            height: 50px;
+            position: relative;
+            background: white;
+            @include _flex(row);
+            .data-left {
+                width: 200px;
+                height: 100%;
+                background-color: $bbb;
+                position: relative;
+                text-align: center;
+                line-height: 50px;
+                cursor: pointer;
+                span {
+                    line-height: 50px;
+                    span {
+                        line-height: 50px;
+                    }
+                }
+            }
+            .data-right {
+                @include _grow(11);
+                height: 100%;
+                background-color: $grayl;
+                text-indent: 20px;
+                position: relative;
+                line-height: 50px;
+                span {
+                    line-height: 50px;
+                    span {
+                        line-height: 50px;
+                    }
+                }
             }
         }
-        .rightcontent {
-            @include _grow(21);
-            height: 100%;
-            background-color: $grayl;
+        #menuAll {
+            position: relative;
+            height: 100vh;
+            @include _grow(1);
+            @include _flex(row);
+            .leftmenu {
+                width: 200px;
+                height: 100%;
+                background-color: $bl;
+                .el-menu-vertical-demo .el-submenu {
+                    transition: ease-in .5s height;
+                }
+            }
+            .rightcontent {
+                @include _grow(11);
+                height: 100%;
+                background-color: $grayl;
+            }
         }
     }

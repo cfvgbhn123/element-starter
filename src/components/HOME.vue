@@ -1,36 +1,71 @@
 <template>
+  
     <div class="contentMain">
-        <div class="leftmenu">
-            <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" v-bind:router="true">
-                <el-submenu index="1">
-                    <template slot="title"><i class="el-icon-message"></i>个人信息</template>
-<el-menu-item-group>
-    <template slot="title">安全</template>
-    <el-menu-item index="/home/password">修改密码</el-menu-item>
-    <el-menu-item index="/home/email">修改邮箱</el-menu-item>
-</el-menu-item-group>
-<el-menu-item-group title="退出">
-    <el-menu-item index="" @click.native="rush">退出登录</el-menu-item>
-</el-menu-item-group>
-</el-submenu>
-<el-menu-item index="/home/back1"><i class="el-icon-menu"></i>备选方案</el-menu-item>
-<el-menu-item index="/home/back2"><i class="el-icon-setting"></i>备选方案</el-menu-item>
-</el-menu>
+          <div id="dataAll">
+            <div class="data-left">
+                数据总览
+            </div>
+            <div class="data-right">
+                <el-breadcrumb separator="">
+  <el-breadcrumb-item :to="{ path: '/home' }">首页<i class='el-icon-caret-right'></i></el-breadcrumb-item>
+  
+  <el-breadcrumb-item>活动管理<i class='el-icon-caret-right'></i></el-breadcrumb-item>
+  <el-breadcrumb-item>活动列表<i class='el-icon-caret-right'></i></el-breadcrumb-item>
+  <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+</el-breadcrumb>
+            </div>
+        </div>
+        <div id="menuAll">
+            <div class="leftmenu">
+                <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+        </div>
 </div>
+
 <div class="rightcontent">
     <router-view></router-view>
-
 </div>
 </div>
 </template>
+
 <script>
     export default {
-        data() {
-            return {
-                msg: "aaaaaa"
+        mounted() {
+            if (window.localStorage.getItem("anfanToken")) {
+
+            } else {
+                location.reload();
             }
         },
+        date() {
+            return data[{
+                label: '一级 1',
+                children: [{
+                    label: '二级 1-1'
+                }]
+            }, {
+                label: '一级 2',
+                children: [{
+                    label: '二级 2-1'
+                }, {
+                    label: '二级 2-2'
+                }]
+            }, {
+                label: '一级 3',
+                children: [{
+                    label: '二级 3-1'
+                }, {
+                    label: '二级 3-2'
+                }]
+            }]
+        },
+        defaultProps: {
+            children: 'children',
+            label: 'label'
+        },
         methods: {
+            handleNodeClick(data) {
+                console.log(data);
+            },
             handleOpen() {
                 console.log("open")
             },

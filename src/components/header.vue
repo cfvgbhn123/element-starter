@@ -1,36 +1,71 @@
 <template>
     <div class="navBar">
-          <el-menu theme="dark" default-active="1" v-bind:router="true" class="el-menu-demo" mode="horizontal" >
-            <el-menu-item index="/aboutus" >关于我们</el-menu-item>
-            
-            <el-menu-item index="/download"  >游戏下载</el-menu-item>
-            <el-menu-item index="/gameInfo" >游戏攻略</el-menu-item>
-            <el-menu-item index="/family" >讨论区</el-menu-item>
-            <el-menu-item index="/home"  >首页</el-menu-item>
+          <el-menu theme="dark" default-active="1" :router="true" class="el-menu-demo" mode="horizontal" >
+              <div id="anfanLogo">
 
-        </el-menu>
+              </div>
+            <el-submenu index="/home">
+                
+                <template slot="title">系统</template>
+<el-menu-item index="/myInfo">我的信息</el-menu-item>
+<el-menu-item index="/out">退出登陆</el-menu-item>
+</el-submenu>
+<el-menu-item index="/aboutus">晨晨</el-menu-item>
+<el-submenu index="#" id="gameList">
 
-    </div>
+    <template slot="title">游戏列表</template>
+    <el-menu-item :index=game v-for="game in gameList">{{game}}</el-menu-item>
+</el-submenu>
+</el-menu>
+
+</div>
 </template>
 <script>
     export default {
         data() {
             return {
                 msg: 'VUE 2.0 测试项目',
-                aboutus: "aboutus",
-                download: "download",
-                home: "home",
-                family: "family",
-                gameInfo: "aboutus",
+                gameList: [
+                    "九阴真经",
+                    "星际争霸",
+                    "炉石传说",
+                    "上古卷轴",
+                    "盟军敢死队",
+                    "红色警戒",
+                    "仙剑奇侠",
+                    "轩辕剑",
+                    "金庸群侠传",
+                    "剑侠情缘",
+                    "帝国时代"
+                ]
 
             }
         },
 
         methods: {
-            _target_blank(target) {
-
-                window.location.href = window.location.href.split("#")[0] + "#/" + target
+            rush() {
+                this.$confirm("确定退出登录吗,并跳转到登录前页面?", "提示", {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    setTimeout(function() {
+                        location.href = location.href.split("#")[0]
+                    }, 1000)
+                    this.$message({
+                        type: "success",
+                        message: "即将退出",
+                    });
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: "已取消操作"
+                    })
+                })
             }
         }
     }
 </script>
+<style scoped lang="sass">
+    @import "../sass/header.scss";
+</style>

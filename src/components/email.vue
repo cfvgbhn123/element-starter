@@ -1,10 +1,5 @@
 <template>
-  <!--<el-input placeholder="请输入内容" v-model="input3">
-    <div class="el-input-group__prepend">http://</div>
-</el-input>
-<el-input placeholder="请输入内容" v-model="input4">
-    <div class="el-input-group__append">.com</div>
-</el-input>-->
+
 <el-input placeholder="请输入内容" v-model="input5" style="width: 300px;">
     <el-select v-model="select" slot="prepend" placeholder="请选择">
         <el-option label="餐厅名" value="1"></el-option>

@@ -3,6 +3,7 @@
 
             <router-view></router-view>
              <router-view name='homedex'></router-view>
+             
 </div>
 </template>
 
