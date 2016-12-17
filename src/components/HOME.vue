@@ -64,7 +64,10 @@
 </el-menu>
 </div>
 <div class="rightcontent">
-    <router-view></router-view>
+    <transition enter-active-class="animated bounceOutRight" leave-active-class="animated bounceOutRight">
+        <router-view></router-view>
+    </transition>
+
 </div>
 </div>
 

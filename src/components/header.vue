@@ -10,7 +10,7 @@
 <el-menu-item index="/myInfo">我的信息</el-menu-item>
 <el-menu-item index="outer" @click.native="rush">退出登陆</el-menu-item>
 </el-submenu>
-<el-menu-item index="/aboutus">晨晨</el-menu-item>
+<el-menu-item index="/aboutus">{{userName}}</el-menu-item>
 <el-submenu index="#" id="gameList">
 
     <template slot="title">游戏列表</template>
@@ -32,7 +32,7 @@
     export default {
         data() {
             return {
-                msg: 'VUE 2.0 测试项目',
+                userName: localStorage.getItem('anfanToken').split("?")[0],
                 gameList: [
                     "九阴真经",
                     "星际争霸",

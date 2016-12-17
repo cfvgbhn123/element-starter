@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import $ from './lib/jquery.min.js'
+import 'animate.css/animate.min.css';
 import ElementUI from 'element-ui'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
@@ -11,6 +12,26 @@ import Rightcontent from './components/rightcontent.vue'
 import Out from './components/out.vue'
 import Welcom from './components/welcom.vue'
 import Admin from './components/admin.vue'
+import NewPlayer from './components/newplayer.vue'
+import JumpPlayer from './components/jumpplayer.vue'
+import AlivePlayer from './components/aliveplayer.vue'
+import PayPoint from './components/paypoint.vue'
+import RemovePlayer from './components/removeplayer.vue'
+import HowToPlay from './components/howtoplay.vue'
+import OnlineExp from './components/onlineexp.vue'
+import RmbPlayer from './components/rmbplayer.vue'
+import LevelInfo from './components/levelinfo.vue'
+import LevelPlace from './components/levelplace.vue'
+import PlayerLevel from './components/playerlevel.vue'
+import VituralMoney from './components/vituralmoney.vue'
+import LikeBuy from './components/likebuy.vue'
+import VituralPoint from './components/vituralpoint.vue'
+import GetMoney from './components/getmoney.vue'
+import PayData from './components/paydata.vue'
+import PlayerToMoney from './components/playertomoney.vue'
+import PayWay from './components/payway.vue'
+
+
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
@@ -30,6 +51,9 @@ const routes = [{
         children: [{
             path: 'all',
             component: Rightcontent
+        }, {
+            path: '',
+            component: Welcom
         }, {
             path: '*',
             component: Welcom
