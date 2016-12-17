@@ -9,15 +9,15 @@ import Header from './components/header.vue'
 import Home from './components/home.vue'
 import Rightcontent from './components/rightcontent.vue'
 import Out from './components/out.vue'
-import Email from './components/email.vue'
+import Welcom from './components/welcom.vue'
 import Admin from './components/admin.vue'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
-
-
+//手动VUEX
+Event = new Vue();
 
 //路由
 const routes = [{
@@ -28,15 +28,12 @@ const routes = [{
 
         },
         children: [{
-                path: 'back1',
-                component: Rightcontent
-            },
-
-            {
-                path: 'email',
-                component: Email
-            }
-        ]
+            path: 'all',
+            component: Rightcontent
+        }, {
+            path: '*',
+            component: Welcom
+        }]
     },
     {
         path: '/out',
@@ -57,7 +54,7 @@ const routes = [{
 
 
 ]
-const router = new VueRouter({
+router = new VueRouter({
         routes
     })
     // router.beforeEach(('', from, next) => {

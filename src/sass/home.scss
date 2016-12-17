@@ -45,6 +45,16 @@
                         }
                     }
                 }
+                .el-date-editor {
+                    text-indent: 0;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    i {
+                        right: 15px;
+                    }
+                }
             }
         }
         #menuAll {
@@ -53,9 +63,11 @@
             @include _grow(1);
             @include _flex(row);
             .leftmenu {
+                overflow: scroll;
                 width: 200px;
                 height: 100%;
                 background-color: #eff2f7;
+                .el-menu-item,
                 .el-submenu {
                     @include box_sizing();
                     border-bottom: 1px solid #ddd;
@@ -65,8 +77,12 @@
                 }
             }
             .rightcontent {
+                @include box_sizing();
                 @include _grow(1);
                 background-color: $grayl;
+                border: 10px solid $grayl;
+                height: 100%;
+                overflow: scroll;
             }
         }
     }

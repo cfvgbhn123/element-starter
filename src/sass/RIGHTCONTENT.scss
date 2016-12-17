@@ -1,1 +1,53 @@
     @import "./common.scss";
+    .el-row {
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        // box-shadow: 0 3px 3px #8698A2;
+    }
+    
+    .el-col {
+        border-radius: 4px;
+    }
+    
+    .bg-purple-dark {
+        background: #99a9bf;
+    }
+    
+    .bg-purple {
+        background: #d3dce6;
+    }
+    
+    .bg-purple-light {
+        background: #e5e9f2;
+    }
+    
+    .info-all {
+        height: 76px;
+    }
+    
+    .info-important {
+        height: 285px;
+    }
+    
+    .info-pay {
+        height: 400px;
+    }
+    
+    .info-player-alive {
+        height: 400px;
+    }
+    
+    .info-online {
+        height: 400px;
+    }
+    
+    .info-play-time {
+        height: 400px;
+    }
+    
+    .row-bg {
+        padding: 10px 0;
+        background-color: #f9fafc;
+    }

@@ -10,21 +10,38 @@
   <el-breadcrumb-item :to="{ path: '/home' }">首页<i class='el-icon-caret-right'></i></el-breadcrumb-item>
   
   <el-breadcrumb-item>活动管理<i class='el-icon-caret-right'></i></el-breadcrumb-item>
-  <el-breadcrumb-item>活动列表<i class='el-icon-caret-right'></i></el-breadcrumb-item>
+  <!--此处渲染时间范围-->
+  <el-breadcrumb-item>{{value4}}<i class='el-icon-caret-right'></i></el-breadcrumb-item>
   <el-breadcrumb-item>{{gameName}}</el-breadcrumb-item>
 </el-breadcrumb>
-           
+             <div class="block">
+    <!--时间选择器-->
+    <el-date-picker
+      v-model="value4"
+      type="daterange"
+      :picker-options="pickerOptions2"
+      :editable=false
+      placeholder="选择时间范围"
+      align="right"
+      style="width:200px">
+    </el-date-picker>
+  </div>
             </div>
         </div>
         <div id="menuAll">
             <div class="leftmenu">
                 <el-menu default-active="2" class="el-menu-vertical-demo" v-bind:router="true" @open="handleOpen" @close="handleClose">
-<el-submenu index="1">
-    <template slot="title"><i class="el-icon-message"></i>导航一</template>
-<el-menu-item index="选项1">选项1</el-menu-item>
-<el-menu-item index="选项2">选项2</el-menu-item>
-<el-menu-item index="选项3">选项3</el-menu-item>
+<el-submenu index="player">
+    <template slot="title"><i class="el-icon-message"></i>游戏玩家</template>
+<el-menu-item index="NewPlayer">新增玩家</el-menu-item>
+<el-menu-item index="JumpPlayer">活跃玩家</el-menu-item>
+<el-menu-item index="AlivePlayer">玩家留存</el-menu-item>
+<el-menu-item index="PayPoint">付费转化</el-menu-item>
+<el-menu-item index="RemovePlayer">玩家流失</el-menu-item>
+<el-menu-item index="HowToPlay">设备相关</el-menu-item>
 </el-submenu>
+<el-menu-item index="OnlineExp"><i class="el-icon-menu"></i>在线分析</el-menu-item>
+<el-menu-item index="RmbPlayer"><i class="el-icon-edit"></i>大R用户</el-menu-item>
 <el-submenu index="2">
     <template slot="title"><i class="el-icon-view"></i>导航二</template>
     <el-menu-item index="选项4">选项4</el-menu-item>
@@ -62,17 +79,46 @@
             } else {
                 location.reload();
             }
+            var _this = this;
 
+            Event.$on("chooseGame", function(game) {
+                _this.gameName = game;
 
-            this.$on("chooseGame", function(game) {
-                this.gameName = game;
-                console.log(this.gameName);
             })
-            console.log(this.gameName);
+
 
         },
         data() {
             return {
+                pickerOptions2: {
+                    shortcuts: [{
+                        text: '最近一周',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: '最近一个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: '最近三个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }]
+                },
+                //时间值
+                value4: '',
                 gameName: "所有游戏"
             }
         },

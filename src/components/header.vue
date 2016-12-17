@@ -1,6 +1,6 @@
 <template>
     <div class="navBar">
-          <el-menu theme="dark" default-active="1" :router="true" class="el-menu-demo" mode="horizontal" >
+          <el-menu theme="dark" default-active="1"  class="el-menu-demo" mode="horizontal" >
               <div id="anfanLogo">
 
               </div>
@@ -8,7 +8,7 @@
                 
                 <template slot="title">系统</template>
 <el-menu-item index="/myInfo">我的信息</el-menu-item>
-<el-menu-item index="/out">退出登陆</el-menu-item>
+<el-menu-item index="outer" @click.native="rush">退出登陆</el-menu-item>
 </el-submenu>
 <el-menu-item index="/aboutus">晨晨</el-menu-item>
 <el-submenu index="#" id="gameList">
@@ -52,7 +52,7 @@
 
         methods: {
             chooseGame(game) {
-                this.$emit('chooseGame', game)
+                Event.$emit('chooseGame', game)
                     // -> "hi"
             },
             rush() {
@@ -61,13 +61,8 @@
                     cancelButtonText: '取消',
                     type: 'warning'
                 }).then(() => {
-                    setTimeout(function() {
-                        location.href = location.href.split("#")[0]
-                    }, 1000)
-                    this.$message({
-                        type: "success",
-                        message: "即将退出",
-                    });
+
+                    router.push("/out");
                 }).catch(() => {
                     this.$message({
                         type: 'info',

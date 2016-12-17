@@ -1,13 +1,57 @@
 <template>
-<el-breadcrumb separator=">">
-  <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-  <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-  <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-  <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-</el-breadcrumb>
+<div>
+  <el-row :gutter="1" type="flex" justify="space-around">
+  <el-col :span="24">
+      <div class='info-all bg-purple-dark'></div>
+  </el-col>
+ 
+   
+  
+</el-row>
+  <el-row :gutter="1" type="flex" justify="space-around">
+  <el-col :span="24">
+      <div class='info-online bg-purple-dark'></div>
+  </el-col>
+ 
+   
+  
+</el-row>
+  <el-row :gutter="1" type="flex" justify="space-around">
+  <el-col :span="24">
+      <div class='info-important bg-purple-dark'></div>
+  </el-col>
+ 
+   
+  
+</el-row>
+  <el-row :gutter="1" type="flex" justify="space-around">
+  <el-col :span="24">
+      <div class='info-pay bg-purple-dark'></div>
+  </el-col>
+ 
+   
+  
+</el-row>
+  <el-row :gutter="1" type="flex" justify="space-around">
+  <el-col :span="24">
+      <div class='info-player-alive bg-purple-dark'></div>
+  </el-col>
+ 
+   
+  
+</el-row>
+  <el-row :gutter="1" type="flex" justify="space-around">
+  <el-col :span="24">
+      <div class='info-play-time bg-purple-dark'></div>
+  </el-col>
+ 
+   
+  
+</el-row>
+</div>
 </template>
 <script>
 </script>
 <style lang="sass" scoped>
-    @import "../sass/RIGHTCONTENT.scss";
+    @import "../sass/Rightcontent.scss";
 </style>

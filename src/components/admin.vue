@@ -6,12 +6,12 @@
             <br>
 
                 <el-form-item  prop="userName">
-                    <el-input v-model="ruleForm.userName" placeholder="请输入用户名">
+                    <el-input v-model="ruleForm.userName" placeholder="请输入用户名" @keydown.27.native=handleReset @keydown.13.native="handleSubmit($event)">
                         <template slot="prepend">用户名</template>
 </el-input>
 </el-form-item>
 <el-form-item prop="pass">
-    <el-input v-model="ruleForm.pass" type="password" placeholder="请输入密码">
+    <el-input v-model="ruleForm.pass" type="password" placeholder="请输入密码" @keydown.13.native="handleSubmit($event)" @keydown.27.native=handleReset>
         <template slot="prepend">密　码</template>
     </el-input>
 </el-form-item>
@@ -41,7 +41,7 @@
             // this.$emit('check');
             if (window.localStorage.getItem("anfanToken")) {
                 // router.push("/home")
-                location.reload();
+                router.push('/home');
 
             }
 
@@ -75,12 +75,19 @@
 
             },
             handleSubmit(ev) {
+
                 this.$refs.ruleForm.validate((valid) => {
                     if (valid) {
                         window.localStorage.setItem("anfanToken", this.ruleForm.userName + "?" + this.ruleForm.pass);
-                        location.reload();
+                        router.push("/home");
                     } else {
-                        alert('error submit!!');
+                        event.preventDefault();
+                        this.$alert('用户名或密码未输入', '出错了', {
+                            cancelButtonText: '确定',
+                            type: 'error'
+
+                        });
+
                         return false;
                     }
                 });

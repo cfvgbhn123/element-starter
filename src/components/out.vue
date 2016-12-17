@@ -15,7 +15,7 @@
             //     clearInterval(timer);
             // }
             setTimeout(function() {
-                window.location.reload();
+                router.push("/")
             }, 1000)
         },
         data() {
