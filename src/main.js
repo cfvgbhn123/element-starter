@@ -50,13 +50,64 @@ const routes = [{
         },
         children: [{
             path: 'all',
-            component: Rightcontent
+            component: Rightcontent//所有数据
         }, {
             path: '',
-            component: Welcom
+            component: Welcom//欢迎界面
         }, {
             path: '*',
-            component: Welcom
+            component: NewPlayer//新玩家
+        }, {
+            path: '*',
+            component: JumpPlayer//活跃玩家
+        }, {
+            path: '*',
+            component: AlivePlayer//
+        }, {
+            path: '*',
+            component: PayPoint//付费转化
+        }, {
+            path: '*',
+            component: RemovePlayer//玩家流失
+        }, {
+            path: '*',
+            component: HowToPlay//设备相关
+        }, {
+            path: '*',
+            component: OnlineExp//在线分析
+        }, {
+            path: '*',
+            component: RmbPlayer//大R玩家
+        }, {
+            path: '*',
+            component: LevelInfo//等级详解
+        }, {
+            path: '*',
+            component: LevelPlace//等级分布
+        }, {
+            path: '*',
+            component: PlayerLevel//新玩家进度
+        }, {
+            path: '*',
+            component: VituralMoney//虚拟货币
+        }, {
+            path: '*',
+            component: LikeBuy//消费偏好
+        }, {
+            path: '*',
+            component: VituralPoint//消费点
+        }, {
+            path: '*',
+            component: GetMoney//收入数据
+        }, {
+            path: '*',
+            component: PayData//付费渗透
+        }, {
+            path: '*',
+            component: PlayerToMoney//新玩家价值
+        },{
+            path: '*',
+            component: PayWay//付费习惯
         }]
     },
     {
