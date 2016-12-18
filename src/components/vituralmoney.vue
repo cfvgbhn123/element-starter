@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        VituralMoney
     </div>
 </template>
 <style lang=sass scoped>

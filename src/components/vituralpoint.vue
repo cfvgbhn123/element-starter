@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        vituralpoint
     </div>
 </template>
 <style lang=sass scoped>

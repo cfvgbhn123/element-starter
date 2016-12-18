@@ -17,16 +17,16 @@ import JumpPlayer from './components/jumpplayer.vue'
 import AlivePlayer from './components/aliveplayer.vue'
 import PayPoint from './components/paypoint.vue'
 import RemovePlayer from './components/removeplayer.vue'
-import HowToPlay from './components/howtoplay.vue'
+import UserDevice from './components/userdevice.vue'
 import OnlineExp from './components/onlineexp.vue'
 import RmbPlayer from './components/rmbplayer.vue'
 import LevelInfo from './components/levelinfo.vue'
 import LevelPlace from './components/levelplace.vue'
-import PlayerLevel from './components/playerlevel.vue'
+import NewPlayerLevel from './components/newplayerlevel.vue'
 import VituralMoney from './components/vituralmoney.vue'
-import LikeBuy from './components/likebuy.vue'
+import ConsumerPreferences from './components/ConsumerPreferences.vue'
 import VituralPoint from './components/vituralpoint.vue'
-import GetMoney from './components/getmoney.vue'
+import GetMoneyData from './components/getmoneydata.vue'
 import PayData from './components/paydata.vue'
 import PlayerToMoney from './components/playertomoney.vue'
 import PayWay from './components/payway.vue'
@@ -55,58 +55,58 @@ const routes = [{
             path: '',
             component: Welcom//欢迎界面
         }, {
-            path: '*',
+            path: 'NewPlayer',
             component: NewPlayer//新玩家
         }, {
-            path: '*',
+            path: 'JumpPlayer',
             component: JumpPlayer//活跃玩家
         }, {
-            path: '*',
-            component: AlivePlayer//
+            path: 'AlivePlayer',
+            component: AlivePlayer//玩家留存
         }, {
-            path: '*',
+            path: 'PayPoint',
             component: PayPoint//付费转化
         }, {
-            path: '*',
+            path: 'RemovePlayer',
             component: RemovePlayer//玩家流失
         }, {
-            path: '*',
-            component: HowToPlay//设备相关
+            path: 'UserDevice',
+            component: UserDevice//设备相关
         }, {
-            path: '*',
+            path: 'OnlineExp',
             component: OnlineExp//在线分析
         }, {
-            path: '*',
+            path: 'RmbPlayer',
             component: RmbPlayer//大R玩家
         }, {
-            path: '*',
+            path: 'LevelInfo',
             component: LevelInfo//等级详解
         }, {
-            path: '*',
+            path: 'LevelPlace',
             component: LevelPlace//等级分布
         }, {
-            path: '*',
-            component: PlayerLevel//新玩家进度
+            path: 'NewPlayerLevel',
+            component: NewPlayerLevel//新玩家进度
         }, {
-            path: '*',
+            path: 'VituralMoney',
             component: VituralMoney//虚拟货币
         }, {
-            path: '*',
-            component: LikeBuy//消费偏好
+            path: 'ConsumerPreferences',
+            component: ConsumerPreferences//消费偏好
         }, {
-            path: '*',
+            path: 'VituralPoint',
             component: VituralPoint//消费点
         }, {
-            path: '*',
-            component: GetMoney//收入数据
+            path: 'GetMoneyData',
+            component: GetMoneyData//收入数据
         }, {
-            path: '*',
+            path: 'PayData',
             component: PayData//付费渗透
         }, {
-            path: '*',
+            path: 'PlayerToMoney',
             component: PlayerToMoney//新玩家价值
         },{
-            path: '*',
+            path: 'PayWay',
             component: PayWay//付费习惯
         }]
     },
