@@ -1,0 +1,32 @@
+@import "./common.scss";
+.wrap {
+    background-color: $ba;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    #logo {
+        background: url("http://tou.liuliang.com/res/mp/pages/img/logo-big.png") no-repeat 50% 50% transparent;
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        @include transform(translate(-50%, -50%) scale(1));
+    }
+    #loginbox {
+        width: 400px;
+        height: 260px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        padding: 10px;
+        padding-top: 15px;
+        @include transform(translate(-50%, -50%));
+        @include box_sizing();
+        background-color: $grayl;
+        box-shadow: 0 5px 10px 0 #000;
+        .el-form-item__label {
+            width: auto;
+        }
+    }
+}

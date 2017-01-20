@@ -1,33 +1,41 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <el-button @click.native="startHacking">Let's do it</el-button>
-  </div>
+    <transition  enter-active-class="animated bounceOutRight" leave-active-class="animated bounceOutRight">
+        <router-view ></router-view>
+    </transition> 
+        <router-view name='homedex'  ></router-view>
+</div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      msg: 'Use Vue 2.0 Today!'
-    }
-  },
+    import hello from './components/hello.vue'
+    import stable from './components/superTable.vue'
+    import kakaka from './components/menu.vue'
 
-  methods: {
-    startHacking () {
-      this.$notify({
-        title: 'It Works',
-        message: 'We have laid the groundwork for you. Now it\'s your time to build something epic!',
-        duration: 6000
-      })
+
+    export default {
+        data() {
+            return {
+                msg: 'VUE 2.0 测试项目'
+
+            }
+        },
+
+        methods: {
+
+        },
+        components: {
+            hello,
+            stable,
+            kakaka
+
+        },
+        mounted() {
+
+        }
     }
-  }
-}
 </script>
 
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
+<style lang="sass">
+    @import "./sass/app.scss";
 </style>

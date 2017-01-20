@@ -1,0 +1,88 @@
+    @import "./common.scss";
+    .contentMain {
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: $whitel;
+        @include _flex(column);
+        position: relative;
+        #dataAll {
+            width: 100%;
+            height: 50px;
+            position: relative;
+            background: white;
+            @include _flex(row);
+            .data-left {
+                width: 200px;
+                height: 100%;
+                background-color: $bbb;
+                position: relative;
+                text-align: center;
+                line-height: 50px;
+                cursor: pointer;
+                span {
+                    line-height: 50px;
+                    span {
+                        line-height: 50px;
+                    }
+                }
+            }
+            .data-right {
+                @include _grow(11);
+                height: 100%;
+                background-color: $grayl;
+                text-indent: 20px;
+                position: relative;
+                line-height: 50px;
+                @include box_sizing();
+                border-bottom: 1px solid #999;
+                .el-breadcrumb {
+                    position: fixed;
+                    width: 50%;
+                    span {
+                        line-height: 50px;
+                        span {
+                            line-height: 50px;
+                        }
+                    }
+                }
+                .el-date-editor {
+                    text-indent: 0;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    i {
+                        right: 15px;
+                    }
+                }
+            }
+        }
+        #menuAll {
+            position: relative;
+            height: 100vh;
+            @include _grow(1);
+            @include _flex(row);
+            .leftmenu {
+                overflow: scroll;
+                width: 200px;
+                height: 100%;
+                background-color: #eff2f7;
+                .el-menu-item,
+                .el-submenu {
+                    @include box_sizing();
+                    border-bottom: 1px solid #ddd;
+                }
+                .el-menu-vertical-demo .el-submenu {
+                    transition: ease-in .5s height;
+                }
+            }
+            .rightcontent {
+                @include box_sizing();
+                @include _grow(1);
+                background-color: $grayl;
+                border: 10px solid $grayl;
+                height: 100%;
+                overflow: scroll;
+            }
+        }
+    }
